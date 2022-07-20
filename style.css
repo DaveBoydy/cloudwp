@@ -1,0 +1,407 @@
+/*
+Theme Name: CloudWP
+Author: David Boyd
+Description: cloudwp is a block theme created to leverage the full power of WordPress's full site editor. 
+Requires at least: 6.0
+Tested up to: 6.0
+Requires PHP: 5.6
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: cloudwp
+Tags: custom-colors, editor-style, featured-images, full-site-editing, one-column, two-columns, right-sidebar, wide-blocks
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# - Misc
+# - Responsive
+# - Colors
+# - Template parts
+# - Custom classes
+# - Block Styles
+--------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------
+# - Misc.
+--------------------------------------------------------------------------------------------*/
+
+/* 
+ * Autosize the main element to fill in the remaining empty viewport space 
+ * between the header and footer when there is little to no content.
+ */
+.wp-site-blocks {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.wp-site-blocks>main {
+    flex-grow: 1;
+}
+
+/*------------------------------------------------------------------------------------------
+# - Responsive.
+--------------------------------------------------------------------------------------------*/
+
+/* 
+ * Make the site more responsive to user interaction.
+ */
+a:hover,
+a:focus {
+    text-decoration-style: dashed;
+}
+
+.wp-block-navigation .wp-block-navigation-item a:hover,
+.wp-block-navigation .wp-block-navigation-item a:focus {
+    text-decoration: underline;
+    text-decoration-style: solid;
+}
+
+.wp-block-search__button,
+.wp-block-file .wp-block-file__button,
+.wp-block-button__link {
+    transition: all 0.3s linear;
+}
+
+.wp-block-search__button:hover,
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-button__link:hover {
+    filter: brightness(0.9);
+}
+
+/*------------------------------------------------------------------------------------------
+# - Colors.
+--------------------------------------------------------------------------------------------*/
+
+/* 
+ * Visited links should always have an alternative color to unvisted links for the sake of site usability.
+ */
+
+a:visited {
+    color: var(--wp--preset--color--link-visited);
+}
+
+/* 
+ * Theme specific button colors.
+ */
+.wp-block-search__button,
+.wp-block-file .wp-block-file__button,
+.wp-block-button__link {
+    color: var(--wp--preset--color--foreground-prime);
+    background-color: var(--wp--preset--color--accent);
+}
+
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-button__link:hover {
+    color: var(--wp--preset--color--foreground-prime);
+}
+
+
+/* 
+ * Theme specific calendar colors.
+ */
+.wp-block-calendar caption {
+    color: var(--wp--preset--color--foreground-bg) !important;
+}
+
+.wp-block-calendar th {
+    color: var(--wp--preset--color--background);
+    background-color: var(--wp--preset--color--foreground-bg) !important;
+}
+
+.wp-block-calendar td {
+    color: var(--wp--preset--color--foreground-bg);
+    border: 1px solid var(--wp--preset--color--foreground-bg) !important;
+}
+
+/*------------------------------------------------------------------------------------------
+# - Template parts.
+--------------------------------------------------------------------------------------------*/
+
+/* 
+ * Switch the positions at which elements stack on mobile.
+ */
+.cloudwp-header-standard {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 599px) {
+
+    .cloudwp-header-standard .header-zenith {
+        order: 3;
+    }
+
+    .cloudwp-header-standard .header-nucleus {
+        order: 2;
+    }
+
+    .cloudwp-header-standard .header-nadir {
+        order: 1;
+    }
+}
+
+/* 
+ * styling the search block in the context of the theme header when is-style-simple-icon-inside is selected.
+ */
+[class*="cloudwp-header"] .has-primary-background-color .is-style-simple-icon-inside.wp-block-search__button-inside.wp-block-search__icon-button .wp-block-search__button {
+    color: var(--wp--preset--color--foreground-prime) !important;
+}
+
+[class*="cloudwp-header"] .has-primary-background-color .is-style-simple-icon-inside.wp-block-search__button-inside.wp-block-search__icon-button .wp-block-search__input {
+    color: var(--wp--preset--color--foreground-prime);
+}
+
+[class*="cloudwp-header"] .has-primary-background-color .is-style-simple-icon-inside.wp-block-search__button-inside.wp-block-search__icon-button .wp-block-search__inside-wrapper {
+    border: 1px solid var(--wp--preset--color--foreground-prime) !important;
+}
+
+[class*="cloudwp-header"] .has-primary-background-color .is-style-simple-icon-inside.wp-block-search__button-inside.wp-block-search__icon-button .wp-block-search__input::placeholder {
+    color: var(--wp--preset--color--foreground-prime) !important;
+    filter: opacity(0.75);
+}
+
+/* 
+ * Add a small gap between list items.
+ */
+[class*="cloudwp-sidebar"] li {
+    margin-bottom: 0.25ch;
+}
+
+/* 
+ * Prevent calendar blowout.
+ */
+[class*="cloudwp-sidebar"] .wp-block-calendar {
+    font-size: 16px;
+}
+
+/* 
+ * Add a small gap between the caption and calendar.
+ */
+[class*="cloudwp-sidebar"] .wp-block-calendar caption {
+    margin-bottom: 0.25ch;
+}
+
+/* 
+ * foreground-prime contrasts well against the prime color.
+ */
+[class*="cloudwp-footer"] a {
+    color: var(--wp--preset--color--foreground-prime);
+
+}
+
+/* 
+ * foreground-bg contrasts well against the secondary and background color.
+ */
+.cloudwp-footer-central a {
+    color: var(--wp--preset--color--foreground-bg);
+}
+
+/*------------------------------------------------------------------------------------------
+# - Custom classes.
+--------------------------------------------------------------------------------------------*/
+
+/* 
+ * Provide resposive I.E. dynamic side padding to selected blocks.
+ */
+.outer-pd {
+    padding-left: var(--wp--custom--spacing--outer);
+    padding-right: var(--wp--custom--spacing--outer);
+}
+
+/* 
+ * Provide resposive I.E. dynamic padding to selected blocks.
+ */
+.boxed-pd {
+    padding: var(--wp--custom--spacing--boxed);
+}
+
+/* 
+ * Used to Remove the top margin from a column block in niche cases.
+ */
+.no-mt {
+    margin-top: 0px !important;
+}
+
+/* 
+ * Alters 'allow to wrap multiple lines' option on a row block.
+ */
+.reverse-wrap {
+    flex-wrap: wrap-reverse !important;
+}
+
+/* 
+ * Stack on tablets, an alternative to stack on mobile.
+ */
+@media (max-width: 959px) {
+    .stack-on-tablet {
+        flex-direction: column;
+    }
+}
+
+/* 
+ * Hide HTML element on large tablets and below.
+ */
+@media (max-width: 959px) {
+    .hide-on-tablet {
+        display: none !important;
+    }
+}
+
+/*------------------------------------------------------------------------------------------
+# - Block styles.
+--------------------------------------------------------------------------------------------*/
+/* 
+ * Pagination.
+ */
+
+.is-style-buttons-pagination .page-numbers,
+.is-style-buttons-pagination .wp-block-query-pagination-next,
+.is-style-buttons-pagination .wp-block-query-pagination-previous,
+.is-style-buttons-pagination.wp-block-post-terms>a {
+    background-color: var(--wp--preset--color--primary);
+    color: var(--wp--preset--color--foreground-prime);
+    padding: 0.4rem 0.7rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s linear;
+}
+
+.is-style-buttons-pagination .page-numbers:hover:not(.current):not(.dots),
+.is-style-buttons-pagination .wp-block-query-pagination-next:hover,
+.is-style-buttons-pagination .wp-block-query-pagination-previous:hover,
+.is-style-buttons-pagination.wp-block-post-terms>a:hover {
+    filter: invert(0.12);
+}
+
+
+.is-style-buttons-pagination.wp-block-query-pagination .current {
+    background-color: var(--wp--preset--color--secondary);
+    color: var(--wp--preset--color--foreground-bg);
+    text-decoration: underline;
+    text-underline-offset: 0.25ch;
+}
+
+/* 
+ * Lists.
+ */
+
+.is-style-circle-bullet li {
+    list-style-type: circle !important;
+}
+
+.is-style-square-bullet li {
+    list-style-type: square !important;
+}
+
+/* 
+ * Links.
+ */
+
+.is-style-no-decoration a {
+    text-decoration: none;
+}
+
+.is-style-simple-highlight a {
+    text-decoration: none;
+
+}
+
+.is-style-simple-highlight a:hover,
+.is-style-simple-highlight a:focus {
+    filter: brightness(1.14);
+
+}
+
+
+.is-style-hover-underline a {
+    text-decoration: none;
+}
+
+.is-style-hover-underline a:hover,
+.is-style-hover-underline a:focus {
+    text-decoration: underline;
+}
+
+/* 
+ * Tag Cloud.
+ */
+
+.is-style-boxed.wp-block-tag-cloud .tag-cloud-link {
+    margin: 0.375em 0.25em;
+    font-size: 1rem !important;
+    padding: 0.467em 0.467em;
+    background-color: transparent;
+    color: var(--wp--preset--color--foreground-bg);
+    border: 1px solid var(--wp--preset--color--foreground-bg);
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.3s linear;
+}
+
+.is-style-boxed.wp-block-tag-cloud .tag-cloud-link:hover {
+    background-color: var(--wp--preset--color--link);
+    border: 1px solid var(--wp--preset--color--link);
+    color: var(--wp--preset--color--foreground-prime);
+}
+
+/* 
+ * Search.
+ */
+
+.is-style-simple-inside.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+    background: #fff;
+    padding: 2px;
+}
+
+.is-style-simple-inside.wp-block-search__button-inside .wp-block-search__button {
+    border: 1px solid var(--wp--preset--color--accent);
+    padding: calc(0.567em - 1px) calc(0.567em - 1px) !important;
+}
+
+.is-style-simple-icon-inside.wp-block-search__button-inside.wp-block-search__icon-button .wp-block-search__inside-wrapper {
+    border: 1px solid var(--wp--preset--color--foreground-bg) !important;
+    border-radius: 6px !important;
+}
+
+.is-style-simple-icon-inside.wp-block-search__button-inside.wp-block-search__icon-button .wp-block-search__input {
+    color: var(--wp--preset--color--foreground-bg);
+    background-color: transparent !important;
+    padding: calc(0.367em - 1px) calc(0.667em - 1px) !important;
+}
+
+.is-style-simple-icon-inside.wp-block-search__button-inside.wp-block-search__icon-button .wp-block-search__button {
+    color: var(--wp--preset--color--foreground-bg) !important;
+    background: transparent !important;
+    border: transparent !important;
+    margin: 0 0 0 2px;
+}
+
+.is-style-simple-icon-inside.wp-block-search__button-inside.wp-block-search__icon-button .wp-block-search__input:focus+.wp-block-search__button {
+    color: var(--wp--preset--color--link) !important;
+}
+
+.is-style-simple-icon-inside.wp-block-search__button-inside.wp-block-search__icon-button .wp-block-search__input::placeholder {
+    color: var(--wp--preset--color--foreground-bg) !important;
+    filter: opacity(0.75);
+}
+
+
+/* 
+ * Comment.
+ */
+
+.comment-respond.is-style-bottom-border {
+    border-bottom: 1px solid var(--wp--preset--color--foreground-bg);
+}
+
+.wp-block-comment-template.is-style-enhanced-comments>li {
+    padding-top: 1.5rem;
+    border-top: 1px dotted var(--wp--preset--color--foreground-bg) !important;
+}
+
+.temp {
+    color: hsl(204, 13%, 15%);
+}

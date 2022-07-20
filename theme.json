@@ -1,0 +1,218 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.0/theme.json",
+	"customTemplates": [
+		{
+			"name": "blank",
+			"postTypes": [
+				"page",
+				"post"
+			],
+			"title": "Blank"
+		},
+		{
+			"name": "page-no-title",
+			"postTypes": [
+				"page"
+			],
+			"title": "Page, No Title"
+		},
+		{
+			"name": "single-elementary",
+			"postTypes": [
+				"post"
+			],
+			"title": "Single Post, Elementary"
+		}
+	],
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"palette": [
+				{
+					"color": "#202020",
+					"name": "Primary",
+					"slug": "primary"
+				},
+				{
+					"color": "#202020",
+					"name": "Primary Blend",
+					"slug": "primary-blend"
+				},
+				{
+					"color": "#282828",
+					"name": "Primary Tint",
+					"slug": "primary-tint"
+				},
+				{
+					"color": "#ebfbff",
+					"name": "Secondary",
+					"slug": "secondary"
+				},
+				{
+					"color": "#0a8066",
+					"name": "Accent",
+					"slug": "accent"
+				},
+				{
+					"color": "#e0e0e0",
+					"name": "Neutral",
+					"slug": "neutral"
+				},
+				{
+					"color": "#0a8066",
+					"name": "Link",
+					"slug": "link"
+				},
+				{
+					"color": "#551A8B",
+					"name": "Link Visited",
+					"slug": "link-visited"
+				},
+				{
+					"color": "#FFFFFF",
+					"name": "Foreground Prime",
+					"slug": "foreground-prime"
+				},
+				{
+					"color": "#303030",
+					"name": "Foreground BG",
+					"slug": "foreground-bg"
+				},
+				{
+					"color": "#FFFFFF",
+					"name": "Background",
+					"slug": "background"
+				}
+			]
+		},
+		"custom": {
+			"spacing": {
+				"boxed": "clamp(16px, 3.5vw, 32px)",
+				"outer": "max(3.5vw, 16px)"
+			}
+		},
+		"layout": {
+			"contentSize": "800px",
+			"wideSize": "1200px"
+		},
+		"spacing": {
+			"units": [
+				"%",
+				"px",
+				"rem",
+				"em",
+				"vh",
+				"vw"
+			]
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
+					"name": "System Font",
+					"slug": "system-font"
+				}
+			],
+			"fontSizes": [
+				{
+					"name": "tiny:14",
+					"size": "0.875rem",
+					"slug": "tiny"
+				},
+				{
+					"name": "Small:15",
+					"size": "0.938rem",
+					"slug": "small"
+				},
+				{
+					"name": "Regular:16",
+					"size": "1rem",
+					"slug": "regular"
+				},
+				{
+					"name": "Moderate:17",
+					"size": "1.063rem",
+					"slug": "moderate"
+				},
+				{
+					"name": "Medium:18",
+					"size": "1.125rem",
+					"slug": "medium"
+				},
+				{
+					"name": "Substantial:19",
+					"size": "1.188rem",
+					"slug": "substantial"
+				},
+				{
+					"name": "Large:20",
+					"size": "1.25rem",
+					"slug": "large"
+				},
+				{
+					"name": "minmax:24-40",
+					"size": "clamp(1.5rem, 3vw, 2.5rem)",
+					"slug": "max-40"
+				},
+				{
+					"name": "minmax:32-48",
+					"size": "clamp(2rem, 4vw, 3rem)",
+					"slug": "max-48"
+				},
+				{
+					"name": "minmax:40-56",
+					"size": "clamp(2.5rem, 5vw, 3.5rem)",
+					"slug": "max-56"
+				},
+				{
+					"name": "minmax:48-64",
+					"size": "clamp(3rem, 6vw, 4rem)",
+					"slug": "max-64"
+				}
+			]
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--background)",
+			"text": "var(--wp--preset--color--foreground-bg)"
+		},
+		"elements": {
+			"link": {
+				"color": {
+					"text": "var(--wp--preset--color--link)"
+				}
+			}
+		},
+		"spacing": {
+			"blockGap": "24px"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--system-font)",
+			"fontSize": "var(--wp--preset--font-size--regular)"
+		}
+	},
+	"templateParts": [
+		{
+			"area": "header",
+			"name": "header-small",
+			"title": "Header (small)"
+		},
+		{
+			"area": "footer",
+			"name": "footer-five-columns",
+			"title": "Footer (five columns)"
+		},
+		{
+			"area": "uncategorized",
+			"name": "sidebar",
+			"title": "Sidebar (colored)"
+		},
+		{
+			"area": "uncategorized",
+			"name": "sidebar-boxed",
+			"title": "Sidebar (boxed)"
+		}
+	],
+	"version": 2
+}
