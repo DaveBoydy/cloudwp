@@ -199,9 +199,29 @@
 			"title": "Header (small)"
 		},
 		{
+			"area": "header",
+			"name": "header-double",
+			"title": "Header (double)"
+		},
+		{
+			"area": "header",
+			"name": "header-centralised",
+			"title": "Header (centralised)"
+		},
+		{
 			"area": "footer",
 			"name": "footer-five-columns",
 			"title": "Footer (five columns)"
+		},
+		{
+			"area": "footer",
+			"name": "footer-centralised",
+			"title": "Footer (centralised)"
+		},
+		{
+			"area": "footer",
+			"name": "footer-small",
+			"title": "Footer (small)"
 		},
 		{
 			"area": "uncategorized",

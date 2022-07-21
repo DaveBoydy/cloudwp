@@ -68,7 +68,7 @@ a:focus {
 .wp-block-search__button:hover,
 .wp-block-file .wp-block-file__button:hover,
 .wp-block-button__link:hover {
-    filter: brightness(0.9);
+    filter: brightness(0.85);
 }
 
 /*------------------------------------------------------------------------------------------
@@ -123,23 +123,27 @@ a:visited {
 /* 
  * Switch the positions at which elements stack on mobile.
  */
-.cloudwp-header-standard {
-    display: flex;
-    flex-direction: column;
-}
-
 @media (max-width: 599px) {
 
-    .cloudwp-header-standard .header-zenith {
-        order: 3;
+    .cloudwp-header-double {
+        display: flex;
+        flex-direction: column;
     }
 
-    .cloudwp-header-standard .header-nucleus {
+    .cloudwp-header-double .header-nadir {
+        order: 1;
+    }
+
+    .cloudwp-header-double .header-zenith {
         order: 2;
     }
 
-    .cloudwp-header-standard .header-nadir {
-        order: 1;
+    .cloudwp-header-double .header-nucleus {
+        order: 3;
+    }
+
+    .cloudwp-header-double .header-bottom {
+        order: 4;
     }
 }
 
@@ -195,7 +199,7 @@ a:visited {
 /* 
  * foreground-bg contrasts well against the secondary and background color.
  */
-.cloudwp-footer-central a {
+.cloudwp-footer-centralised a {
     color: var(--wp--preset--color--foreground-bg);
 }
 
@@ -226,7 +230,7 @@ a:visited {
 }
 
 /* 
- * Alters 'allow to wrap multiple lines' option on a row block.
+ * Alters 'allow to wrap multiple lines' option on a row block. ISSUE: https://github.com/WordPress/gutenberg/issues/41954
  */
 .reverse-wrap {
     flex-wrap: wrap-reverse !important;
@@ -269,17 +273,26 @@ a:visited {
     transition: all 0.3s linear;
 }
 
+.is-style-buttons-pagination .wp-block-query-pagination-next,
+.is-style-buttons-pagination .wp-block-query-pagination-previous {
+    background-color: var(--wp--preset--color--accent);
+    color: var(--wp--preset--color--foreground-prime);
+
+}
+
 .is-style-buttons-pagination .page-numbers:hover:not(.current):not(.dots),
-.is-style-buttons-pagination .wp-block-query-pagination-next:hover,
-.is-style-buttons-pagination .wp-block-query-pagination-previous:hover,
 .is-style-buttons-pagination.wp-block-post-terms>a:hover {
-    filter: invert(0.12);
+    filter: invert(0.1);
+}
+
+.is-style-buttons-pagination .wp-block-query-pagination-next:hover,
+.is-style-buttons-pagination .wp-block-query-pagination-previous:hover {
+    filter: brightness(0.85);
 }
 
 
 .is-style-buttons-pagination.wp-block-query-pagination .current {
-    background-color: var(--wp--preset--color--secondary);
-    color: var(--wp--preset--color--foreground-bg);
+    filter: invert(1);
     text-decoration: underline;
     text-underline-offset: 0.25ch;
 }
@@ -394,7 +407,7 @@ a:visited {
  */
 
 .comment-respond.is-style-bottom-border {
-    border-bottom: 1px solid var(--wp--preset--color--foreground-bg);
+    border-bottom: 1px solid var(--wp--preset--color--neutral);
 }
 
 .wp-block-comment-template.is-style-enhanced-comments>li {
@@ -403,5 +416,5 @@ a:visited {
 }
 
 .temp {
-    color: hsl(204, 13%, 15%);
+    color: #31373f;
 }

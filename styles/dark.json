@@ -15,7 +15,7 @@
                 },
                 {
                     "slug": "primary-tint",
-                    "color": "#364e72",
+                    "color": "#31373f",
                     "name": "Primary Tint"
                 },
                 {
@@ -25,7 +25,7 @@
                 },
                 {
                     "slug": "accent",
-                    "color": "#202020",
+                    "color": "#6694ff",
                     "name": "Accent"
                 },
                 {
