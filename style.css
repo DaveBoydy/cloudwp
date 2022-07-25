@@ -267,7 +267,7 @@ a:visited {
 .is-style-buttons-pagination.wp-block-post-terms>a {
     background-color: var(--wp--preset--color--primary);
     color: var(--wp--preset--color--foreground-prime);
-    padding: 0.4rem 0.7rem;
+    padding: 0.4em 0.7em;
     border-radius: 5px;
     text-decoration: none;
     transition: all 0.3s linear;
@@ -282,7 +282,9 @@ a:visited {
 
 .is-style-buttons-pagination .page-numbers:hover:not(.current):not(.dots),
 .is-style-buttons-pagination.wp-block-post-terms>a:hover {
-    filter: invert(0.1);
+    filter: invert(0.15);
+    /* filter: brightness(1.15); */
+    /* filter: saturate(0.5); */
 }
 
 .is-style-buttons-pagination .wp-block-query-pagination-next:hover,
@@ -292,9 +294,12 @@ a:visited {
 
 
 .is-style-buttons-pagination.wp-block-query-pagination .current {
-    filter: invert(1);
+    background-color: var(--wp--preset--color--secondary);
+    color: var(--wp--preset--color--foreground-bg);
+    /* color: #020202; */
     text-decoration: underline;
     text-underline-offset: 0.25ch;
+    /* filter: invert(1) saturate(0); */
 }
 
 /* 
@@ -416,5 +421,8 @@ a:visited {
 }
 
 .temp {
-    color: #31373f;
+    color: hsl(0, 0%, 96%);
+    color: hsl(222, 100%, 58%);
+
+
 }

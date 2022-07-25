@@ -1,0 +1,64 @@
+{
+    "version": 2,
+    "settings": {
+        "color": {
+            "palette": [
+                {
+                    "color": "#003c7f",
+                    "name": "Primary",
+                    "slug": "primary"
+                },
+                {
+                    "color": "#003c7f",
+                    "name": "Primary Blend",
+                    "slug": "primary-blend"
+                },
+                {
+                    "color": "#00438f",
+                    "name": "Primary Tint",
+                    "slug": "primary-tint"
+                },
+                {
+                    "color": "#f7f7f2",
+                    "name": "Secondary",
+                    "slug": "secondary"
+                },
+                {
+                    "color": "#cf7c17",
+                    "name": "Accent",
+                    "slug": "accent"
+                },
+                {
+                    "color": "#e0e0e0",
+                    "name": "Neutral",
+                    "slug": "neutral"
+                },
+                {
+                    "color": "#2969ff",
+                    "name": "Link",
+                    "slug": "link"
+                },
+                {
+                    "color": "#6e22b4",
+                    "name": "Link Visited",
+                    "slug": "link-visited"
+                },
+                {
+                    "color": "#FFFFFF",
+                    "name": "Foreground Prime",
+                    "slug": "foreground-prime"
+                },
+                {
+                    "color": "#303030",
+                    "name": "Foreground BG",
+                    "slug": "foreground-bg"
+                },
+                {
+                    "color": "#FFFFFF",
+                    "name": "Background",
+                    "slug": "background"
+                }
+            ]
+        }
+    }
+}

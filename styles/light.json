@@ -15,17 +15,17 @@
                 },
                 {
                     "slug": "primary-tint",
-                    "color": "#e0e0e0",
+                    "color": "#ffffff",
                     "name": "Primary Tint"
                 },
                 {
                     "slug": "secondary",
-                    "color": "#f3f3f3",
+                    "color": "#ffffff",
                     "name": "Secondary"
                 },
                 {
                     "slug": "accent",
-                    "color": "#f3f3f3",
+                    "color": "#f5f5f5",
                     "name": "Accent"
                 },
                 {
@@ -35,7 +35,7 @@
                 },
                 {
                     "slug": "link",
-                    "color": "#2969ff",
+                    "color": "#0000EE",
                     "name": "Link"
                 },
                 {

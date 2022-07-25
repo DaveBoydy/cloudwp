@@ -83,7 +83,7 @@ if (!function_exists('cloudwp_register_block_pattern_categories')) :
          */
         $block_pattern_categories = array(
 
-            'cloudwp-tagline'    => array('label' => esc_html__('cloudwp: Tagline', 'cloudwp')),
+            'cloudwp-tagline'    => array('label' => esc_html__('CloudWP: Tagline', 'cloudwp')),
         );
 
         foreach ($block_pattern_categories as $name => $properties) {
